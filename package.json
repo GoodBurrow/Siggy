@@ -1,0 +1,17 @@
+{
+  "name": "siggy",
+  "private": false,
+  "description": "Free local-first HTML email signature generator for Gmail, Outlook, Apple Mail, and other email clients.",
+  "homepage": "https://barryanders.github.io/Siggy/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barryanders/Siggy.git"
+  },
+  "author": "Barry Anders",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test"
+  }
+}
