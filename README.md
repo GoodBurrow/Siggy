@@ -2,6 +2,8 @@
 
 # Siggy
 
+Made by [Good Burrow](https://goodburrow.github.io/).
+
 <p><strong>Build a professional email signature you can copy into Gmail, Outlook, or Apple Mail.</strong></p>
 <p>
 A free, local-first email signature builder for creating polished HTML email signatures for Gmail, Outlook, Apple Mail, and other email clients.<br>
