@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/barryanders/Siggy/main/assets/icons/siggy-red-panda.png" alt="Siggy app icon" width="256" height="256">
+<img src="https://raw.githubusercontent.com/GoodBurrow/Siggy/main/assets/icons/siggy-app-icon.png" alt="Siggy app icon" width="256" height="256">
 
 # Siggy
 

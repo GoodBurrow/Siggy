@@ -28,7 +28,7 @@ test('referenced local assets exist', () => {
   const requiredRefs = [
     ...localRefs,
     ...generatedAvatarRefs,
-    'assets/icons/siggy-red-panda.png',
+    'assets/icons/siggy-app-icon.png',
   ];
 
   assert.ok(requiredRefs.length > 50, 'expected local icon and avatar references');
