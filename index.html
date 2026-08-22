@@ -1655,7 +1655,7 @@
     const APP_NAME = 'Siggy';
     const LEGACY_APP_NAME = 'SignaCard';
     const STORAGE_KEY = 'signacard.v2';
-    const STATE_VERSION = 5;
+    const STATE_VERSION = 6;
     const SAVED_KEY = 'signacard.savedCards.v1';
     const HIDDEN_DESIGNS_KEY = 'signacard.hiddenDesigns.v1';
     const COFFEE_PROMPT_KEY = 'siggy.coffeePromptSeen.v1';
@@ -1911,19 +1911,19 @@
     });
 
     const defaultState = {
-      template: 'slate-band',
-      name: 'Claire Bennett',
-      title: 'Creative Director',
-      company: 'Brightline Studio',
+      template: 'ivory-letterpress',
+      name: 'Jordan Lee',
+      title: 'Communications Director',
+      company: 'Northfield Studio',
       photo: defaultPhoto,
-      logo: 'Brightline Studio',
-      email: 'claire@brightline.example',
-      phone: '(555) 014-2201',
-      website: 'brightline.example',
-      location: 'Tulsa, OK',
-      tagline: 'Clear communication, thoughtful design, and useful work for people who need it.',
-      accent: '#ef5b49',
-      colorMode: 'locked-dark',
+      logo: 'Northfield Studio',
+      email: 'jordan@northfield.example',
+      phone: '(555) 013-2486',
+      website: 'northfield.example',
+      location: 'Madison, WI',
+      tagline: 'Clear information, carefully presented.',
+      accent: '#9b6a3f',
+      colorMode: 'locked-light',
       photoStyle: 'template',
       preset: 'standard',
       cardWidth: 600,
@@ -1932,11 +1932,11 @@
       radius: 18,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor: '#3f3f46',
-      cardBg: '#111214',
-      textColor: '#ffffff',
-      fontFamily: 'Arial, Helvetica, sans-serif',
-      photoSource: 'avatar',
+      borderColor: '#d7c8b4',
+      cardBg: '#fffaf2',
+      textColor: '#2f2923',
+      fontFamily: "Georgia, 'Times New Roman', serif",
+      photoSource: 'none',
       previewSize: 'desktop',
       customFields: [],
       stateVersion: STATE_VERSION
@@ -1995,6 +1995,14 @@
     function loadState() {
       try {
         const loaded = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        const isUntouchedLegacySample = loaded.stateVersion === 5
+          && loaded.template === 'slate-band'
+          && loaded.name === 'Claire Bennett'
+          && loaded.title === 'Creative Director'
+          && loaded.company === 'Brightline Studio'
+          && loaded.email === 'claire@brightline.example'
+          && loaded.website === 'brightline.example';
+        if (isUntouchedLegacySample) return { ...defaultState };
         const merged = sanitizeState(loaded);
         if (loaded.stateVersion !== STATE_VERSION) {
           const tpl = templates.find(t => t.id === merged.template) || templates[0];

@@ -45,3 +45,13 @@ test('the README points users at the published app and local run path', () => {
   assert.match(readme, /No account/);
   assert.match(readme, /No tracking/);
 });
+
+test('starter signature uses the current calm professional example', () => {
+  const html = read('index.html');
+
+  assert.match(html, /template: 'ivory-letterpress'/);
+  assert.match(html, /name: 'Jordan Lee'/);
+  assert.match(html, /company: 'Northfield Studio'/);
+  assert.match(html, /photoSource: 'none'/);
+  assert.doesNotMatch(html, /template: 'slate-band',\s*name: 'Claire Bennett'/);
+});
